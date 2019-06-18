@@ -3,9 +3,8 @@
     "",
     "\\main",
     "\\main\\templates",
-    "\\main\\templates\\main",
-    "\\Polus_Gold"
+    "\\main\\templates\\main"
   ],
-  "SelectedNode": "\\Polus_Gold\\settings.py",
+  "SelectedNode": "\\main\\urls.py",
   "PreviewInSolutionExplorer": false
 }

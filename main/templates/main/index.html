@@ -19,9 +19,37 @@
     <link rel="stylesheet" type="text/css" href="/static/css/fancySelect.css" media="screen" />
     <link rel="stylesheet" href="/static/style.css">
     <link rel="shortcut icon" href="http://placehold.it/32x32/ccc.jpg">
+
+    <script src="/static/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/jquery.mmenu.all.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/mobilemenu.js"></script>
+
 </head>
 <body>
     <div id="page">
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Главная</a>
+                </li>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="news.html">Новости</a>
+                </li>
+                <li>
+                    <a href="team.html">Руководство</a>
+                </li>
+                <li>
+                    <a href="comment.html">Отзывы</a>
+                </li>
+                <li>
+                    <a href="contact.html">Контактные данные</a>
+                </li>
+            </ul>
+        </nav>
+
         <header class="header-h2">
             <div class="topbar tb-dark tb-md">
                 <div class="container">
@@ -144,7 +172,6 @@
                                         <i class="fa" aria-hidden="true"></i>
                                         Подробнее
                                     </a>
-
                                 </div>
                             </div>
                         </div>
@@ -193,18 +220,22 @@
                                 return
                             }
                             if (document.getElementById('input_3').value == "") {
-                                alert("Заполните все поля");
+                                
                                 return
                             }
                             if (document.getElementById('input_4').value == "") {
                                 alert("Заполните все поля");
                                 return
                             }
-                                var for_mass = parseInt(document.getElementById('input_1').value) * 4 + parseInt(document.getElementById('input_2').value) * 4 + parseInt(document.getElementById('input_3').value * 4 + parseInt(document.getElementById('input_4').value) * 2.5);
-                                fine_value.value = for_mass + "р";
+                            var for_mass = parseInt(document.getElementById('input_1').value) * 4 + parseInt(document.getElementById('input_2').value) * 4 + parseInt(document.getElementById('input_3').value * 4 + parseInt(document.getElementById('input_4').value) * 2.5);
+                            fine_value.value = for_mass + "р";
+
+                            if (fine_value.value == "NaNр") {
+                                alert("Введите верные данные");
+                                fine_value.value = "";
+                            }
                         }
                     </script>
-
                 </div>
             </div>
         </section>
@@ -272,10 +303,11 @@
                     <div class="col-md-12">
                         <div class="subcribe-warp">
                             <p class="sub-text-subcri">Оставьте свои данные </p>
-                            <form class="form-inline form-subcri">
+                            <form method="POST" action="add_que/" class="form-inline form-subcri">
+                                {% csrf_token %}
                                 <div class="form-group">
                                     <label for="exampleInputName2"><small>И мы <span> свяжемся</span> с вами</small></label>
-                                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Ваш E-mail адрес">
+                                    <input type="text" name="name" class="form-control" id="exampleInputName2" placeholder="Ваш E-mail адрес">
                                 </div>
                                 <button type="submit" class="btn-subcrib"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                             </form>
@@ -377,5 +409,6 @@
             </div>
         </section>
     </div>
-    </body>
+  
+</body>
     </html>

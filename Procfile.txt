@@ -1,1 +1,0 @@
-web: gunicorn Dauria.wsgi --log-file -

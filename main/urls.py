@@ -3,8 +3,13 @@ from . import views
 from django.views.generic import ListView, DetailView
 from main.models import news
 from main.models import comments
+from django.urls import path
+
 
 urlpatterns = [
+    path('add_que/', views.add_que),
+    path('create/', views.create),
+    url('add_que', views.add_que, name="add_que"),
     url('about', views.about, name="about"),
     url('team', views.team, name="team"),
     url('contact', views.contact, name="contact"),

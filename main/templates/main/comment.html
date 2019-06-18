@@ -101,6 +101,7 @@
             <div class="container">
                 <div class="row">
                     {% for post in object_list %}
+                    {% if post.use == True %}
                     <div class="partner-list">
                         <div class="item-partner-list">
                             <div class="col-md-1">
@@ -115,7 +116,34 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                     {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light-grey">
+            <div class="container">
+                <div class="row">
+                    <form method="POST" action="create/" class="form-contact-warp form-apply-job cb-form">
+                        {% csrf_token %}
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="title-block title-contact">
+                                <h3>Оставить отзыв</h3>
+                                <span class="bottom-title"></span>
+                            </div>
+                            <input class="form-control" name="person" value="" id="input_1" required="required" title="" placeholder="ФИО" type="text">
+                            <input class="form-control" name="city" value="" id="input_2" required="required" title="" placeholder="Город" type="text">
+                            <input class="form-control" name="text" value="" id="input_2" required="required" title="" placeholder="Комментарий" type="text">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" onclick="onclickButton()" class="btn-sub-color btn-apply">Оставить</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>

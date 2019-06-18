@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -4731,9 +4731,9 @@ ul.wd-list-link li.active a {
 }
 /* History Page */
 .sh-company-history {
-    background: url(/static/images/bg-content/bg_1.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background: url(images/bg-content/cb-h5.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .item-history-post {
   display: inline-block;
